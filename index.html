@@ -351,6 +351,63 @@ dialog.lb img{max-height:84vh;border-radius:14px}
 footer{padding:40px 0 110px;color:var(--mute);font-size:13px;text-align:center}
 .toast{position:fixed;left:50%;bottom:90px;translate:-50% 0;background:#fff;color:#111;border-radius:12px;padding:10px 14px;font:600 14px var(--sans);z-index:99;opacity:0;transition:opacity .3s;pointer-events:none;max-width:90vw}
 .toast.on{opacity:1}
+
+/* ===== live layer ===== */
+.brand{display:flex;align-items:center;gap:9px}
+.navclk{width:30px;height:30px;flex:none}
+.navclk circle{fill:#f3e8d2;stroke:#fff;stroke-width:1.2}
+.navclk line{stroke:#111;stroke-width:2.2;stroke-linecap:round}
+.navclk #navM{stroke:#E5383B;stroke-width:1.6}
+.reel{position:absolute;left:0;right:0;bottom:6px;height:5px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 7px,transparent 7px 11px)}
+.reel i{position:absolute;inset:0;background:repeating-linear-gradient(90deg,var(--tan) 0 7px,transparent 7px 11px);transform-origin:0 50%;transform:scaleX(0)}
+.leak{position:fixed;inset:0;pointer-events:none;z-index:74;display:none}
+.leak i{position:absolute;width:60vmax;height:60vmax;border-radius:50%;background:radial-gradient(circle,rgba(255,170,90,.11),transparent 62%);top:-20vmax;left:-20vmax;animation:leak 18s ease-in-out infinite alternate}
+.leak i+i{top:auto;left:auto;bottom:-25vmax;right:-25vmax;background:radial-gradient(circle,rgba(240,52,110,.07),transparent 62%);animation-duration:23s}
+@media(min-width:900px) and (hover:hover){.leak{display:block}}
+@keyframes leak{to{transform:translate(18vmax,14vmax) scale(1.2)}}
+.palm{transform-box:fill-box;transform-origin:50% 100%;animation:sway 6s ease-in-out infinite alternate}
+.palm.b{animation-duration:7.5s;animation-delay:-3s}
+@keyframes sway{from{transform:rotate(-1.8deg)}to{transform:rotate(2deg)}}
+.flag{transform-box:fill-box;transform-origin:0 50%;animation:flag 1.1s ease-in-out infinite alternate}
+@keyframes flag{from{transform:skewY(-7deg) scaleX(.9)}to{transform:skewY(6deg) scaleX(1.05)}}
+.flick{animation:flick 5s steps(1) infinite}
+@keyframes flick{0%,100%{opacity:1}41%{opacity:.6}43%{opacity:1}70%{opacity:.8}71%{opacity:1}}
+.flick2{animation:glow2 5s ease-in-out infinite alternate}
+@keyframes glow2{from{opacity:.35}to{opacity:.75}}
+.moonglow{animation:mg 6s ease-in-out infinite alternate}@keyframes mg{to{opacity:.55}}
+.flap{transform-box:fill-box;transform-origin:50% 50%;animation:flap .45s ease-in-out infinite alternate}
+@keyframes flap{to{transform:scaleY(-.5)}}
+.lead{width:54px;height:54px;flex:none;overflow:visible}
+.lead circle{fill:none;stroke:#fff;stroke-opacity:.45;stroke-width:1.4}
+.lead .wedge{fill:rgba(244,210,122,.28)}
+.lead line{stroke:#fff;stroke-opacity:.3;stroke-width:1}
+.lead text{fill:#fff;font:900 26px var(--serif);text-anchor:middle;dominant-baseline:central}
+.lapse{height:330vh;position:relative}
+.lapse-in{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:76px var(--gut) 20px;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#1c1b19,#0b0b0b 70%)}
+.lclk{width:min(58vw,300px);height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6))}
+@media(max-height:700px){.lclk{width:min(44vw,220px)}}
+.ldig{font:900 clamp(60px,17vw,130px)/.9 var(--serif);font-variant-numeric:lining-nums;padding-bottom:.08em}
+.lsay{font:700 clamp(21px,5.6vw,40px)/1.15 var(--sans);margin:0;min-height:2.3em;color:#fff}
+.lsay .sx-p{color:var(--pink)}.lsay .sx-g{color:var(--green)}.lsay .mn{color:var(--gold)}
+.lnote{min-height:2.6em}
+.lbar{width:min(420px,80vw);height:4px;background:#2a2a2a;border-radius:4px;overflow:hidden;margin-top:6px}
+.lbar i{display:block;height:100%;background:var(--tan);transform-origin:0 50%;transform:scaleX(0)}
+.lapse.hot .ldig{color:var(--pink);-webkit-text-fill-color:var(--pink)}
+.tdbox{display:grid;gap:12px;margin:22px 0}
+@media(min-width:760px){.tdbox{grid-template-columns:1fr 1fr}}
+.td{background:#121212;border:1px solid #262626;border-radius:18px;padding:16px 18px;font:900 clamp(44px,13vw,72px)/1 var(--serif);color:#fff;perspective:400px}
+.td b{display:inline-block;color:var(--pink);min-width:.1em}
+.td .S{display:inline-block;color:var(--tan)}
+.td small{display:block;font:500 14px var(--sans);color:var(--mute);margin-top:8px}
+.ticket::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.5) 48%,transparent 60%);transform:translateX(-120%);animation:shine 4.5s ease-in-out infinite 1s;pointer-events:none}
+@keyframes shine{0%{transform:translateX(-120%)}35%,100%{transform:translateX(120%)}}
+.cta{position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:0;background:linear-gradient(105deg,transparent,rgba(255,255,255,.35),transparent);transform:translateX(-120%);animation:ctash 3.2s ease-in-out infinite}
+@keyframes ctash{0%{transform:translateX(-120%)}45%,100%{transform:translateX(320%)}}
+.dots{animation:dots 1.2s steps(2) infinite}@keyframes dots{50%{opacity:.25}}
+.tbc .mega{animation:proj 3.4s steps(1) infinite}
+@keyframes proj{0%,100%{opacity:1}12%{opacity:.86}13%{opacity:1}57%{opacity:.92}58%{opacity:1}}
+.say{perspective:500px}
 /* reveal fallback */
 .rv{transition:transform .8s cubic-bezier(.2,.9,.2,1)}
 html:not(.gs) .rv:not(.in){transform:translateY(26px)}
@@ -371,7 +428,7 @@ html.gs .rv{transition:none}
 <canvas id="dust" aria-hidden="true"></canvas>
 
 <header class="bar">
-  <a class="brand" href="#top">Alterna Türkçe<small>сезон «Время»</small></a>
+  <a class="brand" href="#top"><svg class="navclk" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><line id="navH" x1="12" y1="12" x2="12" y2="7.5"/><line id="navM" x1="12" y1="12" x2="12" y2="4"/></svg><span>Alterna Türkçe<small>сезон «Время»</small></span></a>
   <nav class="eps" id="eps" aria-label="Серии">
     <a class="ep" href="#ep1" data-ep="ep1">Серия 1</a>
     <a class="ep" href="#ep2" data-ep="ep2">Серия 2</a>
@@ -381,7 +438,9 @@ html.gs .rv{transition:none}
     <a class="ep" href="#ep6" data-ep="ep6">Серия 6</a>
     <a class="ep buy" href="#season" data-ep="season">Сезон →</a>
   </nav>
+  <div class="reel" aria-hidden="true"><i id="reelFill"></i></div>
 </header>
+<div class="leak" aria-hidden="true"><i></i><i></i></div>
 
 <main>
 <!-- ============ HERO ============ -->
@@ -400,26 +459,28 @@ html.gs .rv{transition:none}
         <filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
       </defs>
       <rect width="800" height="700" fill="url(#skyG)"/>
-      <g id="stars" fill="#fff"></g>
-      <circle cx="170" cy="130" r="150" fill="url(#glowM)"/>
+      <g id="lyStars"><g id="stars" fill="#fff"></g></g>
+      <g id="lyMoon"><circle class="moonglow" cx="170" cy="130" r="150" fill="url(#glowM)"/>
       <g class="moon"><circle cx="170" cy="130" r="58" fill="url(#moonG)"/><circle cx="150" cy="115" r="10" fill="#000" opacity=".07"/><circle cx="188" cy="150" r="14" fill="#000" opacity=".06"/><circle cx="182" cy="104" r="6" fill="#000" opacity=".07"/><circle cx="142" cy="152" r="5" fill="#000" opacity=".06"/></g>
-      <g fill="none" stroke="#cfcfcf" stroke-width="2.2" stroke-linecap="round" opacity=".75" class="gulls"><path d="M560 120q10-9 18 0q8-9 18 0"/><path d="M610 160q7-6 13 0q6-6 13 0"/><path d="M520 175q6-5 11 0q5-5 11 0"/></g>
-      <!-- far city -->
+      </g>
+      <g fill="none" stroke="#cfcfcf" stroke-width="2.2" stroke-linecap="round" opacity=".8" class="gulls"><g class="gull"><path class="flap" d="M560 120q10-9 18 0q8-9 18 0"/></g><g class="gull"><path class="flap" d="M610 160q7-6 13 0q6-6 13 0"/></g><g class="gull"><path class="flap" d="M520 175q6-5 11 0q5-5 11 0"/></g></g>
+      <!-- far city --><g id="lyCity">
       <path d="M0 500V440h40v-20h30v30h40v-40h26v20h50v-30h30v50h60v-25h40v40h300v-30h40v-30h34v40h50v-20h40v30h60v-35h40v40H800V500Z" fill="#161618"/>
       <g fill="#ffcf86" opacity=".55"><rect x="48" y="448" width="5" height="7"/><rect x="118" y="438" width="5" height="7"/><rect x="218" y="446" width="5" height="7"/><rect x="590" y="430" width="5" height="7"/><rect x="664" y="446" width="5" height="7"/><rect x="742" y="440" width="5" height="7"/></g>
+      </g>
       <!-- city wall -->
       <rect x="0" y="472" width="800" height="18" fill="url(#merl)"/>
       <rect x="0" y="488" width="800" height="212" fill="url(#wallG)"/>
       <rect x="0" y="488" width="800" height="212" fill="url(#stone)" opacity=".7"/>
       <!-- tower -->
-      <g class="tower">
+      <g class="tower" id="lyTower">
         <polygon points="336,152 400,92 464,152" fill="#3a3835"/>
         <line x1="400" y1="92" x2="400" y2="58" stroke="#888" stroke-width="2"/>
-        <path d="M401 59h26l-6 8 6 8h-26z" fill="#E5383B"/>
+        <path class="flag" d="M401 59h26l-6 8 6 8h-26z" fill="#E5383B"/>
         <rect x="344" y="150" width="112" height="92" fill="url(#stoneG)"/>
         <rect x="344" y="150" width="112" height="92" fill="url(#stone)"/>
         <path d="M360 238v-50a14 14 0 0 1 28 0v50zM412 238v-50a14 14 0 0 1 28 0v50z" fill="#0d0c0b"/>
-        <path d="M366 238v-44a8 8 0 0 1 16 0v44zM418 238v-44a8 8 0 0 1 16 0v44z" fill="#ffc46e" opacity=".55"/>
+        <path d="M366 238v-44a8 8 0 0 1 16 0v44zM418 238v-44a8 8 0 0 1 16 0v44z" fill="#ffc46e" opacity=".55" class="flick2"/>
         <rect x="332" y="236" width="136" height="14" fill="#77736c"/>
         <g fill="#5f5c56"><rect x="332" y="226" width="12" height="12"/><rect x="352" y="226" width="12" height="12"/><rect x="372" y="226" width="12" height="12"/><rect x="416" y="226" width="12" height="12"/><rect x="436" y="226" width="12" height="12"/><rect x="456" y="226" width="12" height="12"/></g>
         <rect x="336" y="250" width="128" height="330" fill="url(#stoneG)"/>
@@ -429,22 +490,21 @@ html.gs .rv{transition:none}
         <g stroke="#2b2a28" stroke-width="3" stroke-linecap="round" id="heroTicks"></g>
         <line id="heroH" x1="400" y1="318" x2="400" y2="294" stroke="#151515" stroke-width="5" stroke-linecap="round"/>
         <line id="heroM" x1="400" y1="318" x2="400" y2="282" stroke="#151515" stroke-width="3.2" stroke-linecap="round"/>
+        <line id="heroS" x1="400" y1="326" x2="400" y2="280" stroke="#E5383B" stroke-width="1.6" stroke-linecap="round"/>
         <circle cx="400" cy="318" r="4" fill="#151515"/>
         <path d="M376 580v-62a24 24 0 0 1 48 0v62z" fill="#0c0b0a"/>
         <circle cx="400" cy="548" r="40" fill="url(#warm)" opacity=".6"/>
       </g>
       <!-- palms -->
-      <g fill="#0a0a0a">
-        <path d="M118 700c6-90 4-170-6-250l10-2c12 80 14 160 8 252z"/>
-        <path d="M116 452c-40-14-74-6-96 18 26-12 58-14 92-6zM118 450c-24-36-60-48-96-40 34 4 64 20 88 46zM120 452c10-40 40-62 80-62-30 12-56 34-70 66zM122 454c38-14 76-6 100 20-28-10-62-12-96-6zM118 456c-30 10-50 34-56 66 14-28 34-46 60-58z"/>
-        <path d="M692 700c-6-100-2-190 12-270l-10-2c-16 86-18 176-12 272z"/>
-        <path d="M700 432c40-16 76-8 98 16-28-12-60-14-94-6zM698 430c22-36 58-50 94-42-34 4-62 20-86 46zM696 432c-12-40-42-60-82-58 30 12 56 32 72 64zM694 434c-38-12-76-2-98 26 28-12 62-16 96-10zM698 436c30 12 48 38 52 70-12-28-30-48-56-62z"/>
+      <g id="lyPalms" fill="#0a0a0a">
+        <g class="palm"><path d="M118 700c6-90 4-170-6-250l10-2c12 80 14 160 8 252z"/><path d="M116 452c-40-14-74-6-96 18 26-12 58-14 92-6zM118 450c-24-36-60-48-96-40 34 4 64 20 88 46zM120 452c10-40 40-62 80-62-30 12-56 34-70 66zM122 454c38-14 76-6 100 20-28-10-62-12-96-6zM118 456c-30 10-50 34-56 66 14-28 34-46 60-58z"/></g>
+        <g class="palm b"><path d="M692 700c-6-100-2-190 12-270l-10-2c-16 86-18 176-12 272z"/><path d="M700 432c40-16 76-8 98 16-28-12-60-14-94-6zM698 430c22-36 58-50 94-42-34 4-62 20-86 46zM696 432c-12-40-42-60-82-58 30 12 56 32 72 64zM694 434c-38-12-76-2-98 26 28-12 62-16 96-10zM698 436c30 12 48 38 52 70-12-28-30-48-56-62z"/></g>
       </g>
       <!-- lamps -->
-      <g><rect x="250" y="520" width="4" height="150" fill="#0d0d0d"/><circle cx="252" cy="516" r="7" fill="#ffd38f"/><circle cx="252" cy="516" r="44" fill="url(#warm)"/>
-      <rect x="546" y="520" width="4" height="150" fill="#0d0d0d"/><circle cx="548" cy="516" r="7" fill="#ffd38f"/><circle cx="548" cy="516" r="44" fill="url(#warm)"/></g>
+      <g><rect x="250" y="520" width="4" height="150" fill="#0d0d0d"/><circle cx="252" cy="516" r="7" fill="#ffd38f"/><circle cx="252" cy="516" r="44" fill="url(#warm)" class="flick"/>
+      <rect x="546" y="520" width="4" height="150" fill="#0d0d0d"/><circle cx="548" cy="516" r="7" fill="#ffd38f"/><circle cx="548" cy="516" r="44" fill="url(#warm)" class="flick"/></g>
       <!-- two silhouettes -->
-      <g fill="#050505">
+      <g fill="#050505" id="lySil">
         <ellipse cx="300" cy="586" rx="17" ry="20"/><path d="M262 700c0-60 14-96 38-96s40 36 40 96z"/>
         <ellipse cx="352" cy="598" rx="15" ry="18"/><path d="M318 700c0-52 12-84 34-84s36 32 36 84z"/>
       </g>
@@ -474,7 +534,7 @@ html.gs .rv{transition:none}
 <!-- ============ EP1 ============ -->
 <section class="sec" id="ep1" data-sec="ep1">
   <div class="wrap">
-    <div class="ephd rv"><span class="ep">Серия 1</span><span>Пилот</span></div>
+    <div class="ephd rv"><svg class="lead" viewBox="0 0 60 60" aria-hidden="true"><path class="wedge" d="M30 3A27 27 0 1 1 29.99 3Z"/><circle cx="30" cy="30" r="27"/><circle cx="30" cy="30" r="20"/><line x1="30" y1="1" x2="30" y2="59"/><line x1="1" y1="30" x2="59" y2="30"/><text x="30" y="31">1</text></svg><span class="ep">Серия 1</span><span>Пилот</span></div>
     <h2 class="h2">Dokuza çeyrek var</h2>
     <p class="lede rv">История про одну букву, одно слово и <b>такси, которое было не нужно</b>.</p>
 
@@ -515,6 +575,37 @@ html.gs .rv{transition:none}
         </svg>
         <div class="bub tan r" style="right:14px;top:14px">Dokuz… çeyrek… 9:15?! Я опоздал!</div>
       </div>
+      <div class="pn w" id="taxiPn">
+        <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="nightG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c0c10"/><stop offset="1" stop-color="#2b2926"/></linearGradient>
+          <linearGradient id="beamG" x1="0" x2="1"><stop offset="0" stop-color="#fff3c9" stop-opacity=".5"/><stop offset="1" stop-color="#fff3c9" stop-opacity="0"/></linearGradient></defs>
+          <rect width="800" height="400" fill="url(#nightG)"/>
+          <g id="txBld"><path fill="#19191b" d="M0 300V170h60v-40h50v60h40v-90h70v70h50v-30h60v80h40v-110h70v60h50v-20h60v70h50v-50h60v40h40v-60h80v140zM800 300V170h60v-40h50v60h40v-90h70v70h50v-30h60v80h40v-110h70v60h50v-20h60v70h50v-50h60v40h40v-60h80v140z"/>
+            <g fill="#ffcf86" opacity=".5"><rect x="20" y="190" width="6" height="8"/><rect x="120" y="150" width="6" height="8"/><rect x="180" y="120" width="6" height="8"/><rect x="250" y="160" width="6" height="8"/><rect x="420" y="110" width="6" height="8"/><rect x="560" y="200" width="6" height="8"/><rect x="680" y="160" width="6" height="8"/><rect x="820" y="190" width="6" height="8"/><rect x="920" y="150" width="6" height="8"/><rect x="980" y="120" width="6" height="8"/><rect x="1050" y="160" width="6" height="8"/><rect x="1220" y="110" width="6" height="8"/><rect x="1360" y="200" width="6" height="8"/><rect x="1480" y="160" width="6" height="8"/></g>
+            <g fill="#0d0d0d"><rect x="90" y="190" width="4" height="112"/><rect x="490" y="190" width="4" height="112"/><rect x="890" y="190" width="4" height="112"/><rect x="1290" y="190" width="4" height="112"/></g>
+            <g fill="#ffd38f"><circle cx="92" cy="188" r="5"/><circle cx="492" cy="188" r="5"/><circle cx="892" cy="188" r="5"/><circle cx="1292" cy="188" r="5"/></g></g>
+          <rect y="300" width="800" height="100" fill="#121212"/>
+          <g id="txDash"><path d="M0 356H1700" stroke="#d9d4c7" stroke-opacity=".7" stroke-width="5" stroke-dasharray="44 36"/></g>
+          <g id="taxi" transform="translate(240 0)">
+            <ellipse cx="166" cy="338" rx="160" ry="10" fill="#000" opacity=".6"/>
+            <path d="M318 262L560 214V340L318 290Z" fill="url(#beamG)"/>
+            <g id="txBody">
+            <path d="M20 300L30 262Q40 250 60 248L95 246L130 212Q140 204 160 204L215 204Q232 204 244 214L282 246L298 250Q318 254 318 272L318 300Q318 312 306 312L32 312Q20 312 20 300Z" fill="#F2C200"/>
+            <path d="M138 214L208 214L208 246L108 246Z" fill="#2a2f33"/><path d="M216 214Q228 214 236 222L262 246L216 246Z" fill="#2a2f33"/>
+            <circle cx="182" cy="232" r="10" fill="#0c0c0c"/><path d="M168 246q14-12 28 0z" fill="#0c0c0c"/>
+            <path d="M212 248V300M120 252V300" stroke="#8a7000" stroke-width="2"/>
+            <rect x="158" y="186" width="60" height="18" rx="3" fill="#111"/><text x="188" y="199" text-anchor="middle" font-family="Unbounded,Onest,sans-serif" font-weight="800" font-size="11" fill="#F2C200">TAKSİ</text>
+            <circle cx="312" cy="270" r="5" fill="#fff7d6"/><rect x="20" y="268" width="6" height="14" fill="#E5383B"/>
+            </g>
+            <g transform="translate(82 312)"><circle r="26" fill="#0b0b0b"/><circle r="12" fill="#6b6b6b"/><g class="spk" stroke="#222" stroke-width="3"><line x1="-12" x2="12"/><line y1="-12" y2="12"/></g></g>
+            <g transform="translate(256 312)"><circle r="26" fill="#0b0b0b"/><circle r="12" fill="#6b6b6b"/><g class="spk" stroke="#222" stroke-width="3"><line x1="-12" x2="12"/><line y1="-12" y2="12"/></g></g>
+            <g id="txSpeed" stroke="#fff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"><path d="M-110 230h80M-150 262h110M-90 292h60"/></g>
+          </g>
+        </svg>
+        <div class="bub" style="left:14px;top:14px">Hızlı, lütfen! Geç kaldım!</div>
+        <div class="bub tan r" style="right:14px;top:72px">Abi, daha dokuza çeyrek var.</div>
+        <p class="cap">Таксист сказал то же самое. <b>Я снова услышал 9:15.</b></p>
+      </div>
       <div class="pn w">
         <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <rect width="800" height="400" fill="#2e2d2b"/>
@@ -540,7 +631,8 @@ html.gs .rv{transition:none}
         <div class="cnt">1/3</div></article>
       <article class="post rv"><div class="who"><span class="ava">ТА</span><div>Тимур <small>· Alterna</small></div></div>
         <p>Я услышал два слова. Dokuz — девять. Çeyrek — четверть. Девять пятнадцать. Я опоздал.</p>
-        <p>Без завтрака. На такси. Влетаю в аудиторию. Пусто. Hoca пьёт чай. Говорит, erken geldin. Рано пришёл.</p>
+        <p>Без завтрака. На такси. Таксист говорит, abi, daha dokuza çeyrek var. Я киваю. Девять пятнадцать. Быстрее.</p>
+        <p>Влетаю в аудиторию. Пусто. Hoca пьёт чай. Говорит, erken geldin. Рано пришёл.</p>
         <p>Говорю, а где все. Говорит, sınav dokuzda. Saat dokuza sekiz <b class="gn">var</b>.</p>
         <div class="cnt">2/3</div></article>
       <article class="post rv"><div class="who"><span class="ava">ТА</span><div>Тимур <small>· Alterna</small></div></div>
@@ -555,7 +647,7 @@ html.gs .rv{transition:none}
 <!-- ============ EP2 ============ -->
 <section class="sec" id="ep2" data-sec="ep2">
   <div class="wrap">
-    <div class="ephd rv"><span class="ep">Серия 2</span><span>Ровно, половина, сутки</span></div>
+    <div class="ephd rv"><svg class="lead" viewBox="0 0 60 60" aria-hidden="true"><path class="wedge" d="M30 3A27 27 0 1 1 29.99 3Z"/><circle cx="30" cy="30" r="27"/><circle cx="30" cy="30" r="20"/><line x1="30" y1="1" x2="30" y2="59"/><line x1="1" y1="30" x2="59" y2="30"/><text x="30" y="31">2</text></svg><span class="ep">Серия 2</span><span>Ровно, половина, сутки</span></div>
     <h2 class="h2">Тут всё просто</h2>
     <div class="txt rv">
       <p>Простое тут правда простое.</p>
@@ -597,7 +689,7 @@ html.gs .rv{transition:none}
 <!-- ============ EP3 ============ -->
 <section class="sec" id="ep3" data-sec="ep3">
   <div class="wrap">
-    <div class="ephd rv"><span class="ep">Серия 3</span><span>geçiyor · var</span></div>
+    <div class="ephd rv"><svg class="lead" viewBox="0 0 60 60" aria-hidden="true"><path class="wedge" d="M30 3A27 27 0 1 1 29.99 3Z"/><circle cx="30" cy="30" r="27"/><circle cx="30" cy="30" r="20"/><line x1="30" y1="1" x2="30" y2="59"/><line x1="1" y1="30" x2="59" y2="30"/><text x="30" y="31">3</text></svg><span class="ep">Серия 3</span><span>geçiyor · var</span></div>
     <h2 class="h2">Есть 2 пути</h2>
     <p class="lede rv">До половины турки считают, <b>сколько прошло</b>. После половины — <b>сколько осталось</b>. Как на моём экзамене.</p>
 
@@ -649,12 +741,35 @@ html.gs .rv{transition:none}
   </div>
 </section>
 
+<!-- ============ LAPSE ============ -->
+<section class="lapse" id="lapse" aria-label="Интерлюдия: утро экзамена, 8:00–9:00">
+  <div class="lapse-in">
+    <p class="kick">Интерлюдия · утро экзамена · листайте</p>
+    <svg class="lclk" viewBox="0 0 300 300" aria-hidden="true">
+      <circle cx="150" cy="150" r="142" fill="#f1ece0" stroke="#fff" stroke-width="4"/>
+      <path id="lArc" fill="#22C98A" opacity=".25"/>
+      <g id="lTicks"></g>
+      <line id="lH" x1="150" y1="150" x2="150" y2="84" stroke="#111" stroke-width="10" stroke-linecap="round"/>
+      <line id="lM" x1="150" y1="150" x2="150" y2="34" stroke="#E5383B" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="150" cy="150" r="9" fill="#111"/>
+    </svg>
+    <div class="ldig chrome" id="lDig">8:00</div>
+    <p class="lsay" id="lSay">Saat sekiz.</p>
+    <div class="bub tan lnote" id="lNote">Будильник. Экзамен в девять.</div>
+    <div class="lbar"><i id="lBar"></i></div>
+  </div>
+</section>
+
 <!-- ============ EP4 ============ -->
 <section class="sec" id="ep4" data-sec="ep4">
   <div class="wrap">
-    <div class="ephd rv"><span class="ep">Серия 4</span><span>Улики</span></div>
+    <div class="ephd rv"><svg class="lead" viewBox="0 0 60 60" aria-hidden="true"><path class="wedge" d="M30 3A27 27 0 1 1 29.99 3Z"/><circle cx="30" cy="30" r="27"/><circle cx="30" cy="30" r="20"/><line x1="30" y1="1" x2="30" y2="59"/><line x1="1" y1="30" x2="59" y2="30"/><text x="30" y="31">4</text></svg><span class="ep">Серия 4</span><span>Улики</span></div>
     <h2 class="h2">Очная ставка</h2>
     <p class="lede rv">Двенадцать чисел. У каждого три формы. <b>Трое ведут себя странно.</b> Нажмите на форму — услышите.</p>
+    <div class="tdbox rv">
+      <div class="td"><span>dör</span><b class="L" data-a="t" data-b="d">d</b><span class="S">ü</span><small>dört + ü → t становится d</small></div>
+      <div class="td"><span>iki</span><b class="L ins" data-a="" data-b="y">y</b><span class="S">i</span><small>iki + i → между гласными встаёт y</small></div>
+    </div>
     <div class="susp" id="susp">
       <div class="srow hd"><span>час</span><span class="p">geçiyor<br>-ı -i -u -ü</span><span class="g">var<br>-a -e</span><span class="t">kaçta?<br>-da -de -ta -te</span></div>
     </div>
@@ -669,7 +784,7 @@ html.gs .rv{transition:none}
 <!-- ============ EP5 ============ -->
 <section class="sec" id="ep5" data-sec="ep5">
   <div class="wrap">
-    <div class="ephd rv"><span class="ep">Серия 5</span><span>Saat kaçta?</span></div>
+    <div class="ephd rv"><svg class="lead" viewBox="0 0 60 60" aria-hidden="true"><path class="wedge" d="M30 3A27 27 0 1 1 29.99 3Z"/><circle cx="30" cy="30" r="27"/><circle cx="30" cy="30" r="20"/><line x1="30" y1="1" x2="30" y2="59"/><line x1="1" y1="30" x2="59" y2="30"/><text x="30" y="31">5</text></svg><span class="ep">Серия 5</span><span>Saat kaçta?</span></div>
     <h2 class="h2">Во сколько?</h2>
     <p class="lede rv"><span class="tr">Saat kaç</span> — «который час». <span class="tr">Saat kaç<b>ta</b></span> — «во сколько». Две буквы разницы. <b>Как у меня с экзаменом.</b></p>
     <div class="morph" id="morph">
@@ -700,7 +815,7 @@ html.gs .rv{transition:none}
 <!-- ============ EP6 ============ -->
 <section class="sec" id="ep6" data-sec="ep6">
   <div class="wrap">
-    <div class="ephd rv"><span class="ep">Серия 6</span><span>Финал</span></div>
+    <div class="ephd rv"><svg class="lead" viewBox="0 0 60 60" aria-hidden="true"><path class="wedge" d="M30 3A27 27 0 1 1 29.99 3Z"/><circle cx="30" cy="30" r="27"/><circle cx="30" cy="30" r="20"/><line x1="30" y1="1" x2="30" y2="59"/><line x1="1" y1="30" x2="59" y2="30"/><text x="30" y="31">6</text></svg><span class="ep">Серия 6</span><span>Финал</span></div>
     <h2 class="h2">Çeyrek vaaaar!!!</h2>
     <p class="lede rv">Шесть вопросов. Без подвоха. Ну, почти.</p>
     <div class="quiz" id="quiz"></div>
@@ -983,6 +1098,8 @@ function miniClock(h,m){
     $('#liveR').textContent='«Сейчас» по-турецки. Если неясно утро или вечер — впереди '+dw[0]+'.';
   }
   tick();setInterval(tick,15000);
+  var hs=$('#heroS'),hon=true;whenVisible($('.hero'),function(){hon=true},function(){hon=false});
+  if(hs)setInterval(function(){if(!hon)return;var d=new Date();hs.setAttribute('transform','rotate('+(d.getSeconds()*6)+' 400 318)');if(d.getSeconds()===0)tick()},1000);
 })();
 
 /* ---------- dust particles ---------- */
@@ -1018,8 +1135,9 @@ $$('canvas.mx').forEach(function(c){
   var SK=[[0,'#06060b','#15151d'],[5,'#2a2730','#77685a'],[7,'#6f8396','#d9cbb0'],[12,'#8fa3b5','#e8e4da'],[17,'#4c4a5a','#c98c5a'],[19,'#1f1d2a','#6b4b45'],[21,'#0b0b12','#22222b'],[24,'#06060b','#15151d']];
   function lerp(a,b,t){var pa=parseInt(a.slice(1),16),pb=parseInt(b.slice(1),16),o='#';for(var i=16;i>=0;i-=8){var ca=(pa>>i)&255,cb=(pb>>i)&255;o+=pad2(Math.round(ca+(cb-ca)*t).toString(16))}return o}
   function pad2(s){return s.length<2?'0'+s:s}
+  var auto=!RM,autoH=6,raf2,skyOn=false;
   function upd(){
-    var h=+r.value,m=half,hf=h+m/60,i=0;while(i<SK.length-1&&SK[i+1][0]<=hf)i++;var a=SK[i],b=SK[Math.min(i+1,SK.length-1)],t=b[0]===a[0]?0:(hf-a[0])/(b[0]-a[0]);
+    var h=+r.value,m=half,hf=auto?autoH:h+m/60,i=0;while(i<SK.length-1&&SK[i+1][0]<=hf)i++;var a=SK[i],b=SK[Math.min(i+1,SK.length-1)],t=b[0]===a[0]?0:(hf-a[0])/(b[0]-a[0]);
     $('#sk1').setAttribute('stop-color',lerp(a[1],b[1],t));$('#sk2').setAttribute('stop-color',lerp(a[2],b[2],t));
     var day=hf>=6&&hf<=19,ang=day?((hf-6)/13)*Math.PI:(((hf+24-19)%24)/11)*Math.PI;var cx=400-340*Math.cos(ang),cy=470-340*Math.sin(ang)*.9;
     $('#skyBody').setAttribute('transform','translate('+cx.toFixed(1)+' '+cy.toFixed(1)+')');
@@ -1030,14 +1148,18 @@ $$('canvas.mx').forEach(function(c){
     else{tr=cap1(dw[0])+' saat '+NOM[H]+(m?' buçuk':'')+'.';ru=pad(h)+':'+pad(m)+' — '+(m?'половина ':'')+H+' '+dw[1]}
     $('#skyWord').textContent=h===0&&m===0?'gece yarısı':dw[0];$('#skyTr').textContent=tr;$('#skyRu').textContent=ru;
   }
-  r.addEventListener('input',upd);
-  $$('#half button').forEach(function(b){b.addEventListener('click',function(){half=+b.dataset.v;$$('#half button').forEach(function(x){x.classList.toggle('on',x===b)});upd()})});
+  function stopAuto(){auto=false;cancelAnimationFrame(raf2)}
+  r.addEventListener('input',function(){stopAuto();upd()});r.addEventListener('pointerdown',stopAuto);
+  var lastTs=0;function loop(ts){if(!auto||!skyOn)return;if(lastTs)autoH=(autoH+(ts-lastTs)/1000*1.5)%24;lastTs=ts;
+    var h=Math.floor(autoH),hm=autoH%1>=.5?30:0;if(+r.value!==h||half!==hm){r.value=h;half=hm;$$('#half button').forEach(function(x){x.classList.toggle('on',+x.dataset.v===hm)})}upd();raf2=requestAnimationFrame(loop)}
+  whenVisible($('#sky'),function(){skyOn=true;lastTs=0;if(auto)raf2=requestAnimationFrame(loop)},function(){skyOn=false;cancelAnimationFrame(raf2)});
+  $$('#half button').forEach(function(b){b.addEventListener('click',function(){stopAuto();half=+b.dataset.v;$$('#half button').forEach(function(x){x.classList.toggle('on',x===b)});upd()})});
   upd();
 })();
 
 /* ---------- EP3: big clock ---------- */
 (function(){
-  var svg=$('#clk');if(!svg)return;var touched=false,T=945,mode='now',drag=false,lastM=null;
+  var svg=$('#clk');if(!svg)return;var lastTxt='',demo=null,touched=false,T=945,mode='now',drag=false,lastM=null;
   var t='',n='';for(var i=0;i<60;i++){var a=i*6*Math.PI/180,big=i%5===0,r1=big?122:128,r2=136;t+='<line x1="'+(150+r1*Math.sin(a))+'" y1="'+(150-r1*Math.cos(a))+'" x2="'+(150+r2*Math.sin(a))+'" y2="'+(150-r2*Math.cos(a))+'" stroke="#fff" stroke-opacity="'+(big?.9:.35)+'" stroke-width="'+(big?3:1.5)+'"/>'}
   for(var k=1;k<=12;k++){var b=k*30*Math.PI/180;n+='<text x="'+(150+102*Math.sin(b)).toFixed(1)+'" y="'+(150-102*Math.cos(b)).toFixed(1)+'">'+k+'</text>'}
   $('#clkTicks').innerHTML=t;$('#clkNums').innerHTML=n;
@@ -1050,17 +1172,18 @@ $$('canvas.mx').forEach(function(c){
     $('#arcP').setAttribute('d',m>0&&m<30?arc(0,m*6,140):'');$('#arcG').setAttribute('d',m>30?arc(m*6,359.9,140):'');
     var p=phrase(h,m,mode),dw=dayWord(h);
     $('#dig').innerHTML=h12(h)+':'+pad(m)+'<small>'+pad(h)+':'+pad(m)+' · '+dw[0]+'</small>';
-    $('#sayOut').innerHTML=p.html;$('#whyOut').textContent=p.why;
+    if(p.text!==lastTxt){$('#sayOut').innerHTML=p.html;if(G)G.fromTo('#sayOut',{y:12,rotationX:-50},{y:0,rotationX:0,duration:.35,ease:'back.out(2.5)',overwrite:true});lastTxt=p.text}$('#whyOut').textContent=p.why;
     if(caps&&touched){caps.classList.toggle('dimg',p.kind===1);caps.classList.toggle('dimp',p.kind===2)}
     $('#sayBtn').onclick=function(){speak(p.text)};
   }
   function fromEvent(e){var r=svg.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*300-150,y=(e.clientY-r.top)/r.height*300-150;var a=Math.atan2(x,-y)*180/Math.PI;if(a<0)a+=360;var m=Math.round(a/6)%60;
     var h=Math.floor(T/60),cur=T%60;if(lastM!==null){if(lastM>45&&m<15)h++;else if(lastM<15&&m>45)h--}lastM=m;T=h*60+m;render()}
-  svg.addEventListener('pointerdown',function(e){touched=true;drag=true;lastM=T%60;svg.setPointerCapture(e.pointerId);fromEvent(e)});
+  svg.addEventListener('pointerdown',function(e){touched=true;if(demo){demo.kill();demo=null}drag=true;lastM=T%60;svg.setPointerCapture(e.pointerId);fromEvent(e)});
   svg.addEventListener('pointermove',function(e){if(drag)fromEvent(e)});
   ['pointerup','pointercancel'].forEach(function(ev){svg.addEventListener(ev,function(){if(drag){drag=false;lastM=null}})});
-  $$('[data-step]').forEach(function(b){b.addEventListener('click',function(){touched=true;T+=+b.dataset.step;render()})});
-  $$('[data-set]').forEach(function(b){b.addEventListener('click',function(){touched=true;var to=+b.dataset.set;if(G){var o={v:T};var d=to-T;if(Math.abs(d)>360)d=d>0?d-720:d+720;G.to(o,{v:T+d,duration:.7,ease:'power3.inOut',onUpdate:function(){T=Math.round(o.v);render()}})}else{T=to;render()}})});
+  $$('[data-step]').forEach(function(b){b.addEventListener('click',function(){touched=true;if(demo){demo.kill();demo=null}T+=+b.dataset.step;render()})});
+  $$('[data-set]').forEach(function(b){b.addEventListener('click',function(){touched=true;if(demo){demo.kill();demo=null}var to=+b.dataset.set;if(G){var o={v:T};var d=to-T;if(Math.abs(d)>360)d=d>0?d-720:d+720;G.to(o,{v:T+d,duration:.7,ease:'power3.inOut',onUpdate:function(){T=Math.round(o.v);render()}})}else{T=to;render()}})});
+  if(G){var dv={v:945};whenVisible(svg,function(){if(touched)return;if(!demo){dv.v=T;demo=G.to(dv,{v:T+75,duration:11,ease:'none',yoyo:true,repeat:-1,onUpdate:function(){T=Math.round(dv.v);render()}})}else demo.resume()},function(){if(demo)demo.pause()})}
   $$('#mode button').forEach(function(b){b.addEventListener('click',function(){mode=b.dataset.v;$$('#mode button').forEach(function(x){x.classList.toggle('on',x===b)});render()})});
   render();
 })();
@@ -1082,9 +1205,11 @@ $$('canvas.mx').forEach(function(c){
   var bd=$('#board');if(!bd)return;
   var R=[['İstanbul',6,15],['Kemer',8,30],['Alanya',9,50],['Side',12,0],['Kaş',14,5],['İzmir',17,45],['Fethiye',21,20]];
   function formal(h,m){return num(h)+(m===0?'':' '+(m<10?'sıfır '+num(m):num(m)))}
+  function flip(b,tm){var fl=$$('.fl:not(.col)',b),k=0,tgt=tm.replace(':','').split('');if(RM)return;var iv=setInterval(function(){fl.forEach(function(el,j){el.textContent=k>6+j*2?tgt[j]:Math.floor(Math.random()*10)});k++;if(k>14){clearInterval(iv);fl.forEach(function(el,j){el.textContent=tgt[j]})}},55)}
+  var cascaded=false;whenVisible(bd,function(){if(cascaded)return;cascaded=true;$$('.brow',bd).forEach(function(b,i){setTimeout(function(){flip(b,b.dataset.tm)},i*180)})},null,'-15% 0px');
   R.forEach(function(r,i){
     var b=document.createElement('button');b.className='brow';b.type='button';
-    var tm=pad(r[1])+':'+pad(r[2]);
+    var tm=pad(r[1])+':'+pad(r[2]);b.dataset.tm=tm;
     b.innerHTML='<span class="city">'+r[0]+'</span><span class="flaps">'+tm.split('').map(function(ch){return '<span class="fl'+(ch===':'?' col':'')+'">'+ch+'</span>'}).join('')+'</span>';
     bd.appendChild(b);
     var det=document.createElement('div');det.className='bdet';det.hidden=true;
@@ -1095,8 +1220,7 @@ $$('canvas.mx').forEach(function(c){
     b.addEventListener('click',function(){
       var open=det.hidden;$$('.bdet',bd).forEach(function(d){d.hidden=true});$$('.brow',bd).forEach(function(x){x.classList.remove('on')});
       if(!open)return;b.classList.add('on');det.hidden=false;
-      var fl=$$('.fl:not(.col)',b),k=0,tgt=tm.replace(':','').split('');
-      if(RM)return;var iv=setInterval(function(){fl.forEach(function(el,j){el.textContent=k>6+j*2?tgt[j]:Math.floor(Math.random()*10)});k++;if(k>14){clearInterval(iv);fl.forEach(function(el,j){el.textContent=tgt[j]})}},55);
+      flip(b,tm);
       speak(now.text);
     });
   });
@@ -1120,6 +1244,7 @@ $$('canvas.mx').forEach(function(c){
     qz.appendChild(d);
     d.addEventListener('click',function(e){var b=e.target.closest('.opt');if(!b||b.disabled)return;var j=+b.dataset.j,ok=j===q.a;
       $$('.opt',d).forEach(function(x,k){x.disabled=true;if(k===q.a)x.classList.add('ok')});if(!ok)b.classList.add('bad');
+      if(G){if(ok)G.fromTo(b,{scale:.94},{scale:1,duration:.5,ease:'elastic.out(1,.4)'});else G.fromTo(b,{x:0},{keyframes:{x:[-10,10,-7,7,-3,0]},duration:.45})}
       var ex=document.createElement('div');ex.className='expl';ex.innerHTML=(ok?'<b class="gn">Да.</b> ':'<b class="pk">Нет.</b> ')+q.e;$('.opts',d).after(ex);
       if(!q.noClock)speak(q.o[q.a]);
       done++;if(ok)right++;if(done===Q.length)finish();
@@ -1164,6 +1289,53 @@ $$('canvas.mx').forEach(function(c){
   $$('.cm,#nshot').forEach(function(el){whenVisible(el,function(){el.classList.add('in')},null,'-20% 0px')});
 })();
 
+/* ---------- live: nav clock + reel ---------- */
+(function(){
+  var nh=$('#navH'),nm=$('#navM'),rf=$('#reelFill'),tk=false;
+  function u(){tk=false;var max=document.documentElement.scrollHeight-innerHeight,p=max>0?Math.min(1,Math.max(0,scrollY/max)):0;
+    if(nh){nh.setAttribute('transform','rotate('+(p*360)+' 12 12)');nm.setAttribute('transform','rotate('+(p*360*12)+' 12 12)')}if(rf)rf.style.transform='scaleX('+p+')'}
+  addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(u)}},{passive:true});u();
+})();
+/* ---------- live: interlude 8:00 -> 9:00 ---------- */
+(function(){
+  var sec=$('#lapse');if(!sec)return;var t='';
+  for(var i=0;i<60;i++){var a=i*6*Math.PI/180,big=i%5===0,r1=big?118:128,r2=136;t+='<line x1="'+(150+r1*Math.sin(a))+'" y1="'+(150-r1*Math.cos(a))+'" x2="'+(150+r2*Math.sin(a))+'" y2="'+(150-r2*Math.cos(a))+'" stroke="#1b1b1b" stroke-width="'+(big?5:2)+'" stroke-linecap="round"/>'}
+  $('#lTicks').innerHTML=t;
+  var NOTES=[[0,'Будильник. Экзамен в девять. Saat dokuzda.'],[30,'Saat sekiz buçuk. Ещё полчаса. Чай.'],[31,'Душ. Телефон сел. Часов нет.'],[45,'«Dokuza çeyrek var». Я слышу 9:15. Паника.'],[46,'Такси. «Abi, daha dokuza çeyrek var». Опять 9:15.'],[52,'Аудитория пустая. Hoca: «Erken geldin».'],[53,'Пьём чай с hoca. Неловко.'],[60,'Saat dokuz. Экзамен. Тут без сюрпризов.']];
+  var on=false,last=-1,tick=false;
+  function pt(m){var a=m*6*Math.PI/180;return (150+140*Math.sin(a)).toFixed(1)+' '+(150-140*Math.cos(a)).toFixed(1)}
+  function arc(m){var la=$('#lArc');if(m<=0.5||(m>=29.5&&m<=30.5)||m>=59.5){return ''}if(m<30){la.setAttribute('fill','#F0346E');return 'M150 150L150 10A140 140 0 0 1 '+pt(m)+'Z'}la.setAttribute('fill','#22C98A');return 'M150 150L'+pt(m)+'A140 140 0 0 1 150 10Z'}
+  function u(){tick=false;var r=sec.getBoundingClientRect(),span=r.height-innerHeight,p=span>0?Math.min(1,Math.max(0,-r.top/span)):0,m=Math.round(p*60);
+    $('#lBar').style.transform='scaleX('+p+')';
+    var mm=p*60;$('#lM').setAttribute('transform','rotate('+(mm*6)+' 150 150)');$('#lH').setAttribute('transform','rotate('+((8+mm/60)*30)+' 150 150)');$('#lArc').setAttribute('d',arc(Math.min(mm,59.99)));
+    if(m===last)return;last=m;var h=8+Math.floor(m/60),mi=m%60;
+    $('#lDig').textContent=h+':'+pad(mi);$('#lSay').innerHTML=phrase(h,mi,'now').html;
+    var n=NOTES[0][1];NOTES.forEach(function(x){if(m>=x[0])n=x[1]});var ln=$('#lNote');if(ln.textContent!==n){ln.textContent=n;if(G)G.fromTo(ln,{scale:.6},{scale:1,duration:.45,ease:'back.out(2.6)'})}
+    sec.classList.toggle('hot',m>=45&&m<=46);
+  }
+  whenVisible(sec,function(){on=true;u()},function(){on=false});
+  addEventListener('scroll',function(){if(on&&!tick){tick=true;requestAnimationFrame(u)}},{passive:true});u();
+})();
+/* ---------- live: t->d / y morph ---------- */
+(function(){
+  var tds=$$('.td');if(!tds.length||!G)return;
+  tds.forEach(function(td,i){var L=$('.L',td),S=$('.S',td),tl=G.timeline({repeat:-1,repeatDelay:1.2,paused:true,delay:i*.6});
+    tl.call(function(){L.textContent=L.dataset.a;L.style.color='#fff';S.style.visibility='hidden'})
+      .to({},{duration:.9}).call(function(){S.style.visibility='visible'})
+      .fromTo(S,{x:60,rotation:20},{x:0,rotation:0,duration:.45,ease:'back.out(2.2)'})
+      .fromTo(L,{rotationX:0,scale:1},{rotationX:90,duration:.16,ease:'power2.in'})
+      .call(function(){L.textContent=L.dataset.b;L.style.color=''})
+      .fromTo(L,{rotationX:-90,scale:1.6},{rotationX:0,scale:1,duration:.5,ease:'back.out(3)'})
+      .to({},{duration:1.4});
+    whenVisible(td,function(){tl.play()},function(){tl.pause()});
+  });
+})();
+/* ---------- live: scramble kaçta endings ---------- */
+(function(){
+  var AB='abcçdefgğhıijklmnoöprsştuüvyz';
+  $$('.mrow em').forEach(function(em){var fin=em.textContent,done=false;whenVisible(em,function(){if(done||RM)return;done=true;var k=0,iv=setInterval(function(){k++;em.textContent=fin.split('').map(function(c,j){return k>4+j*3?c:AB[Math.floor(Math.random()*AB.length)]}).join('');if(k>6+fin.length*3){clearInterval(iv);em.textContent=fin}},50)},null,'-20% 0px')});
+})();
+
 /* ---------- reveals & GSAP ---------- */
 if(!G){
   var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'}):null;
@@ -1189,6 +1361,32 @@ if(!G){
   $$('.mrow').forEach(function(r){var em=$('em',r);if(em)gsap.from(em,{scale:2.2,color:'#F0346E',duration:.8,ease:'elastic.out(1,.45)',scrollTrigger:{trigger:r,start:'top 80%'}})});
   $$('.steam path').forEach(function(p,i){gsap.to(p,{y:-10,duration:1.6+i*.3,yoyo:true,repeat:-1,ease:'sine.inOut'})});
   var hs=$('.hero-scene svg');if(hs)gsap.to(hs,{yPercent:12,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  /* hero parallax layers */
+  [['#lyStars',30],['#lyMoon',70],['#lyCity',30],['#lyTower',12],['#lyPalms',-40],['#lySil',-70]].forEach(function(l){var el=$(l[0]);if(el)gsap.to(el,{y:l[1],ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}})});
+  if(matchMedia('(hover:hover) and (min-width:900px)').matches){var qs=[['#lyMoon',-14],['#lyCity',-6],['#lyTower',-10],['#lyPalms',22],['#lySil',30]].map(function(l){var el=$(l[0]);return el?[gsap.quickTo(el,'x',{duration:.9,ease:'power3'}),l[1]]:null}).filter(Boolean);
+    $('.hero').addEventListener('pointermove',function(e){var k=e.clientX/innerWidth-.5;qs.forEach(function(q){q[0](k*q[1])})})}
+  $$('.gull').forEach(function(g,i){var tw=gsap.fromTo(g,{x:-700-i*120,y:0},{x:400,duration:20+i*4,ease:'none',repeat:-1,delay:-i*6});gsap.to(g,{y:-14,duration:1.6+i*.4,yoyo:true,repeat:-1,ease:'sine.inOut'})});
+  /* film leaders */
+  $$('.lead').forEach(function(ld){var w=$('.wedge',ld),t=$('text',ld),o={a:0};
+    function d(a){if(a>=359.9)return 'M30 3A27 27 0 1 1 29.99 3Z';var r=a*Math.PI/180;return 'M30 30L30 3A27 27 0 '+(a>180?1:0)+' 1 '+(30+27*Math.sin(r)).toFixed(2)+' '+(30-27*Math.cos(r)).toFixed(2)+'Z'}
+    gsap.to(o,{a:360,ease:'none',scrollTrigger:{trigger:ld,start:'top 98%',end:'top 55%',scrub:.4},onUpdate:function(){w.setAttribute('d',d(o.a))}});
+    gsap.from(t,{scale:2.4,transformOrigin:'50% 50%',duration:.6,ease:'back.out(3)',scrollTrigger:{trigger:ld,start:'top 60%'}});
+  });
+  /* pilot clocks tick with scroll */
+  $$('.dial').forEach(function(g){var m0=+g.dataset.m,h0=+g.dataset.h,start=h0*60+m0-7,o={v:start};
+    gsap.to(o,{v:h0*60+m0,ease:'none',scrollTrigger:{trigger:g.closest('.pn'),start:'top 90%',end:'center 45%',scrub:.5},onUpdate:function(){var v=Math.round(o.v);g.dataset.h=Math.floor(v/60);g.dataset.m=v%60;drawDial(g)}});
+  });
+  /* taxi */
+  var tx=$('#taxiPn');if(tx){var loops=[gsap.fromTo('#txBld',{x:0},{x:-800,duration:7,ease:'none',repeat:-1,paused:true}),gsap.fromTo('#txDash',{x:0},{x:-80,duration:.32,ease:'none',repeat:-1,paused:true}),gsap.to('#taxiPn .spk',{rotation:-360,svgOrigin:'0 0',duration:.35,ease:'none',repeat:-1,paused:true}),gsap.to('#txBody',{y:-2.5,duration:.16,yoyo:true,repeat:-1,ease:'sine.inOut',paused:true}),gsap.fromTo('#txSpeed',{x:20},{x:-30,duration:.35,repeat:-1,ease:'none',paused:true})];
+    whenVisible(tx,function(){loops.forEach(function(l){l.play()})},function(){loops.forEach(function(l){l.pause()})});
+    gsap.fromTo('#taxi',{x:-260},{x:240,ease:'power1.out',scrollTrigger:{trigger:tx,start:'top 95%',end:'center 55%',scrub:.6}});}
+  /* suspects row stagger */
+  ScrollTrigger.batch('.srow:not(.hd)',{start:'top 92%',onEnter:function(b){gsap.from(b,{x:-40,rotation:-1.5,duration:.6,ease:'power3.out',stagger:.05});gsap.from(b.map(function(r){return $$('b',r)}).flat(),{scale:.3,y:-10,duration:.6,ease:'elastic.out(1,.45)',stagger:.02,delay:.25})}});
+  /* ticket 3D tilt */
+  var tz=$('.tkt-zone'),tkt=$('#tkt');if(tz&&tkt&&matchMedia('(hover:hover)').matches){var rx=gsap.quickTo(tkt,'rotationX',{duration:.5}),ry=gsap.quickTo(tkt,'rotationY',{duration:.5});gsap.set(tkt,{transformPerspective:900});
+    tz.addEventListener('pointermove',function(e){var b=tkt.getBoundingClientRect();ry((e.clientX-b.left-b.width/2)/b.width*22);rx(-(e.clientY-b.top-b.height/2)/b.height*16)});tz.addEventListener('pointerleave',function(){rx(0);ry(0)})}
+  /* capsules glow breathing */
+  $$('.caps .half').forEach(function(h,i){gsap.to(h,{boxShadow:i?'0 0 60px 10px rgba(240,52,110,.45)':'0 0 60px 10px rgba(34,201,138,.45)',duration:1.8,yoyo:true,repeat:-1,ease:'sine.inOut',delay:i*.9})});
   addEventListener('load',function(){ScrollTrigger.refresh()});
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){ScrollTrigger.refresh()});
 }
